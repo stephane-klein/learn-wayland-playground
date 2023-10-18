@@ -20,3 +20,16 @@ $ echo $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY
 $ ls -lha /run/user/1000/wayland-0
 srwxr-xr-x. 1 stephane stephane 0 18 oct.  09:48 /run/user/1000/wayland-0
 ```
+
+```sh
+$ gcc playground1.c -o playground1; ./playground1
+Succès
+/run/user/1000
+sun_path size
+108%
+```
+
+
+## Ressources
+
+- https://github.com/oz123/awesome-c
