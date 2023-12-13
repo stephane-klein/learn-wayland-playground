@@ -9,8 +9,8 @@ pub fn wayland_display_connect() u16 {
     const wayland_display = std.os.getenv("WAYLAND_DISPLAY");
     print("Hello 1 {?s}\n", .{wayland_display});
 
-    const concatenatedString = std.fmt.allocPrint(allocator, "{?s}{?s}", .{xdg_runtime_dir, wayland_display});
-    print("{}\n", concatenatedString);
+    const concatenatedString = std.fmt.allocPrint(allocator, "{?s}{?s}", .{xdg_runtime_dir, wayland_display}) catch unreachable;
+    print("{s}\n", .{concatenatedString});
     const stream = std.net.connectUnixSocket("/run/user/1000/wayland-0") catch unreachable;
     defer stream.close();
     return 0;
